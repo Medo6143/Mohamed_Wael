@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Wael - MERN Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">MW</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="glow-text">Mohamed Wael</span>
+                    </h1>
+                    <h2 class="hero-subtitle">MERN Stack Developer</h2>
+                    <p class="hero-description">
+                        Crafting digital experiences with MongoDB, Express.js, React.js, and Node.js. 
+                        Passionate about building scalable web applications and innovative solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-code"></i>
+                            View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="floating-cube cube-1">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="floating-cube cube-2">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="floating-cube cube-3">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="floating-cube cube-4">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>Scroll Down</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate MERN Stack Developer</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who I Am</h3>
+                    <p>
+                        I'm a dedicated MERN Stack Developer with 1 year of experience in creating robust, 
+                        scalable web applications. My expertise lies in building full-stack solutions 
+                        using MongoDB, Express.js, React.js, and Node.js.
+                    </p>
+                    <p>
+                        With a strong foundation in modern web technologies, I specialize in creating 
+                        user-centric applications that deliver exceptional experiences. I love turning 
+                        complex problems into simple, beautiful, and intuitive solutions.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">11+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="tech-stack">
+                        <div class="tech-item" data-tech="MongoDB">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-item" data-tech="Express">
+                            <i class="fab fa-node-js"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="tech-item" data-tech="React">
+                            <i class="fab fa-react"></i>
+                            <span>React.js</span>
+                        </div>
+                        <div class="tech-item" data-tech="Node">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card" data-project="chat">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Chat Application</h3>
+                            <p>Real-time messaging with Firebase</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Chat Application</h3>
+                            <p>A real-time chat application built with React and Firebase. Features include user authentication, real-time messaging, and responsive design.</p>
+                            <div class="project-links">
+                                <a href="https://chat-me-six-zeta.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/medo6143/chat-me" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="ecommerce">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>E-commerce Store</h3>
+                            <p>Full-stack online shopping platform</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>E-commerce Store</h3>
+                            <p>An online store with authentication, product management, shopping cart, and order management using Firebase backend.</p>
+                            <div class="project-links">
+                                <a href="https://store-mohamed.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/medo6143/ecommerce-store" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="image-search">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Image Search App</h3>
+                            <p>Advanced image search and gallery</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Image Search App</h3>
+                            <p>A simple image search application that fetches and displays images dynamically using an API.</p>
+                            <div class="project-links">
+                                <a href="https://medo6143.github.io/image-search/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/medo6143/image-search" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="gamexo">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>GameXO</h3>
+                            <p>Interactive Tic-Tac-Toe game</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>GameXO</h3>
+                            <p>A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript.</p>
+                            <div class="project-links">
+                                <a href="https://medo6143.github.io/gamexo/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/medo6143/gamexo" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="portfolio">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3>Portfolio Website</h3>
+                            <p>Personal portfolio showcasing skills</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Portfolio Website</h3>
+                            <p>My personal portfolio showcasing my skills, projects, and experience as a front-end developer.</p>
+                            <div class="project-links">
+                                <a href="https://portfolio-mohameds-projects-ea923384.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/medo6143/portfolio" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="best-food">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3>Best Food</h3>
+                            <p>Food delivery landing page</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Best Food</h3>
+                            <p>A landing page project for a food delivery concept with modern UI and responsive design.</p>
+                            <div class="project-links">
+                                <a href="https://best-food-react-4060sdcuh-mohameds-projects-ea923384.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/medo6143/best-food" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+
+                <div class="project-card" data-project="amazon">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fab fa-amazon"></i>
+                            </div>
+                            <h3>Amazon Clone</h3>
+                            <p>E-commerce platform clone</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Amazon Clone</h3>
+                            <p>An Amazon clone built with React and deployed on Vercel, featuring product listings, cart, and checkout flow.</p>
+                            <div class="project-links">
+                                <a href="https://amazon-clone-seven-opal.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Medo6143/Amazon_Clone" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="karame">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Karame ELSHAM</h3>
+                            <p>Custom landing page website</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Karame ELSHAM</h3>
+                            <p>A custom landing page website project created for Karame ELSHAM with responsive UI and optimized layout.</p>
+                            <div class="project-links">
+                                <a href="https://karame-elsham.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Medo6143/Karame_ELSHAM" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="interior">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3>Interior Design</h3>
+                            <p>Modern interior design landing page</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Interior Design</h3>
+                            <p>A modern interior design landing page showcasing animations and responsive layouts.</p>
+                            <div class="project-links">
+                                <a href="https://inrerior-design.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Medo6143/Inrerior_Design-" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="movies">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="project-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <h3>Movies App</h3>
+                            <p>Movies app with search and filtering</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Movies App</h3>
+                            <p>A movies app with search, filtering, and UI built with React.</p>
+                            <div class="project-links">
+                                <a href="https://movies-app-lilac-eta.vercel.app/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Medo6143/Movies_app__" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Projects Pagination -->
+                    <div class="pagination-container">
+            <div class="pagination" id="projectsPagination">
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid">
+                    <div class="skill-item" data-skill="react">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>React.js</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                            <span>90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="nextjs">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>Next.js</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="react-native">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>React Native</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 75%"></div>
+                            </div>
+                            <span>75%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="node">
+                        <div class="skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h4>Node.js</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="mongodb">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>MongoDB</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 80%"></div>
+                            </div>
+                            <span>80%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="express">
+                        <div class="skill-icon">
+                            <i class="fab fa-node"></i>
+                        </div>
+                        <h4>Express.js</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="css">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h4>CSS3</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 92%"></div>
+                            </div>
+                            <span>92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="tailwind">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h4>Tailwind CSS</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 88%"></div>
+                            </div>
+                            <span>88%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="bootstrap">
+                        <div class="skill-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h4>Bootstrap</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="firebase">
+                        <div class="skill-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h4>Firebase</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 82%"></div>
+                            </div>
+                            <span>82%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="git">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <h4>Git</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 88%"></div>
+                            </div>
+                            <span>88%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-skill="github">
+                        <div class="skill-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h4>GitHub</h4>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                            <span>90%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services I Offer</h2>
+                <p class="section-subtitle">What I can do for you</p>
+            </div>
+            <div class="services-content">
+                <div class="services-carousel" id="servicesCarousel">
+                    <button class="carousel-btn carousel-prev" id="carouselPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="services-slide-container">
+                        <div class="services-slide active" data-slide="1">
+                            <div class="services-grid">
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h3>Web Development</h3>
+                                    <p>Building responsive and modern web applications using React, Next.js, and the latest web technologies. From simple landing pages to complex web applications.</p>
+                                    <div class="service-features">
+                                        <span class="feature-tag">React.js</span>
+                                        <span class="feature-tag">Next.js</span>
+                                        <span class="feature-tag">Responsive Design</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <h3>Mobile Development</h3>
+                                    <p>Creating cross-platform mobile applications using React Native. Delivering native-like performance across iOS and Android platforms.</p>
+                                    <div class="service-features">
+                                        <span class="feature-tag">React Native</span>
+                                        <span class="feature-tag">iOS</span>
+                                        <span class="feature-tag">Android</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <h3>Backend Development</h3>
+                                    <p>Building robust server-side applications using Node.js, Express.js, and MongoDB. Creating RESTful APIs and database management systems.</p>
+                                    <div class="service-features">
+                                        <span class="feature-tag">Node.js</span>
+                                        <span class="feature-tag">Express.js</span>
+                                        <span class="feature-tag">MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="services-slide" data-slide="2">
+                            <div class="services-grid">
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <i class="fas fa-paint-brush"></i>
+                                    </div>
+                                    <h3>UI/UX Design</h3>
+                                    <p>Creating beautiful and intuitive user interfaces with modern design principles. Using Tailwind CSS and Bootstrap for responsive layouts.</p>
+                                    <div class="service-features">
+                                        <span class="feature-tag">Tailwind CSS</span>
+                                        <span class="feature-tag">Bootstrap</span>
+                                        <span class="feature-tag">Modern Design</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <h3>Database Management</h3>
+                                    <p>Setting up and managing databases using MongoDB and Firebase. Implementing data models and ensuring data security and performance.</p>
+                                    <div class="service-features">
+                                        <span class="feature-tag">MongoDB</span>
+                                        <span class="feature-tag">Firebase</span>
+                                        <span class="feature-tag">Data Security</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h3>Deployment & DevOps</h3>
+                                    <p>Deploying applications to production using modern platforms like Vercel, Netlify, and Heroku. Setting up CI/CD pipelines and version control.</p>
+                                    <div class="service-features">
+                                        <span class="feature-tag">Vercel</span>
+                                        <span class="feature-tag">Git/GitHub</span>
+                                        <span class="feature-tag">CI/CD</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-next" id="carouselNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <!-- Services Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="carousel-dot active" data-slide="1"></button>
+                    <button class="carousel-dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always interested in hearing about new projects and opportunities. 
+                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>mohamedwael6143@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+20 1067333964</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Medo6143/" class="social-link" title="GitHub" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohamed-wael-469744273/" class="social-link" title="LinkedIn" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/201067333964" class="social-link" title="WhatsApp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Mohamed Wael. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
