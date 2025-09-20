@@ -9,47 +9,97 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="tabs.js" defer></script>
 </head>
 <body>
     <!-- 3D Background Canvas -->
     <canvas id="bg-canvas"></canvas>
     
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Main Container for Tabs -->
+    <div class="main-container">
+        <!-- Navigation Tabs -->
+        <nav class="tabs-nav">
             <div class="nav-logo">
-                <a href="#home">MW</a>
+                <a href="#home" class="tab-logo">MW</a>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="tab-btn" data-tab="about">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </button>
+                <button class="tab-btn" data-tab="cv">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Resume</span>
+                </button>
+                <button class="tab-btn" data-tab="projects">
+                    <i class="fas fa-code"></i>
+                    <span>Projects</span>
+                </button>
+                <button class="tab-btn" data-tab="skills">
+                    <i class="fas fa-cogs"></i>
+                    <span>Skills</span>
+                </button>
+                <button class="tab-btn" data-tab="services">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </button>
+                <button class="tab-btn" data-tab="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="mobile-menu">
+            <div class="mobile-tabs">
+                <button class="mobile-tab-btn active" data-tab="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="mobile-tab-btn" data-tab="about">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </button>
+                <button class="mobile-tab-btn" data-tab="cv">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Resume</span>
+                </button>
+                <button class="mobile-tab-btn" data-tab="projects">
+                    <i class="fas fa-code"></i>
+                    <span>Projects</span>
+                </button>
+                <button class="mobile-tab-btn" data-tab="skills">
+                    <i class="fas fa-cogs"></i>
+                    <span>Skills</span>
+                </button>
+                <button class="mobile-tab-btn" data-tab="services">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </button>
+                <button class="mobile-tab-btn" data-tab="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
             </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+        <!-- Main Content -->
+        <div class="tab-content">
+            <!-- Home Tab -->
+            <div id="home" class="tab-pane active">
+                <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -94,9 +144,12 @@
                 <span>Scroll Down</span>
             </div>
         </div>
-    </section>
+                </section>
+            </div>
 
-    <!-- About Section -->
+            <!-- About Tab -->
+            <div id="about" class="tab-pane">
+                <section class="about">
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
@@ -153,9 +206,36 @@
                 </div>
             </div>
         </div>
-    </section>
+                </section>
+            </div>
 
-    <!-- Projects Section -->
+            <!-- CV Tab -->
+            <div id="cv" class="tab-pane">
+                <section class="cv">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">My CV</h2>
+                            <p class="section-subtitle">Download my resume to learn more about my experience and skills</p>
+                        </div>
+            <div class="cv-content">
+                <div class="cv-preview">
+                    <div class="cv-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Mohamed Wael - Full Stack Developer</h3>
+                    <p>Professional CV highlighting my experience, skills, and projects</p>
+                    <a href="Cv/Mohamed%20Wael-Full%20Stack%20Developer.pdf" class="btn btn-primary" download="Mohamed_Wael_CV.pdf">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+                </section>
+            </div>
+
+            <!-- Projects Tab -->
+            <div id="projects" class="tab-pane">
+                <section class="projects">
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
@@ -462,9 +542,12 @@
             </div>
         </div>
         </div>
-    </section>
+                </section>
+            </div>
 
-    <!-- Skills Section -->
+            <!-- Skills Tab -->
+            <div id="skills" class="tab-pane">
+                <section class="skills">
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
@@ -620,9 +703,12 @@
                 </div>
             </div>
         </div>
-    </section>
+                </section>
+            </div>
 
-    <!-- Services Section -->
+            <!-- Services Tab -->
+            <div id="services" class="tab-pane">
+                <section class="services">
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
@@ -732,9 +818,12 @@
                 </div>
             </div>
         </div>
-    </section>
+                </section>
+            </div>
 
-    <!-- Contact Section -->
+            <!-- Contact Tab -->
+            <div id="contact" class="tab-pane">
+                <section class="contact">
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
@@ -806,7 +895,10 @@
                 </div>
             </div>
         </div>
-    </section>
+                </section>
+            </div>
+        </div> <!-- End of .tab-content -->
+    </div> <!-- End of .main-container -->
 
     <!-- Footer -->
     <footer class="footer">
