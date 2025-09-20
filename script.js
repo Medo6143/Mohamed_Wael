@@ -196,10 +196,62 @@ function onDocumentMouseMove(event) {
     mouseY = (event.clientY - windowHalfY) * 0.001;
 }
 
+// Smooth scrolling for anchor links
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// Scroll indicator
+function initScrollIndicator() {
+    const progressBar = document.createElement('div');
+    progressBar.style.position = 'fixed';
+    progressBar.style.top = '0';
+    progressBar.style.left = '0';
+    progressBar.style.height = '4px';
+    progressBar.style.background = 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))';
+    progressBar.style.zIndex = '9999';
+    progressBar.style.transition = 'width 0.1s ease-out';
+    progressBar.style.borderRadius = '0 4px 4px 0';
+    progressBar.style.width = '0%';
+    progressBar.id = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+}
+
 // Enhanced Portfolio JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Three.js
     initThreeJS();
+    
+    // Initialize smooth scrolling
+    initSmoothScrolling();
+    
+    // Initialize scroll indicator
+    initScrollIndicator();
     
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
